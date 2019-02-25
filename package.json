@@ -1,0 +1,36 @@
+{
+  "name": "teams-ubuntu-enhanced",
+  "version": "0.0.9",
+  "description": "Microsoft teams for ubuntu platform",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "rm -rf dist && npm run 32-bit && npm run 64-bit",
+    "32-bit": "electron-packager . 'Microsoft Teams' --platform=linux --arch=ia32 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
+    "64-bit": "electron-packager . 'Microsoft Teams' --platform=linux --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
+    "distMac": "electron-packager . 'Microsoft Teams' --platform=darwin --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"(dist/|node_modules/)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudhirnakka/teams-ubuntu-enhanced.git"
+  },
+  "keywords": [
+    "electron",
+    "teams",
+    "notifications",
+    "enhanced"
+  ],
+  "author": "Sudhir Nakka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudhirnakka/teams-ubuntu-enhanced/issues"
+  },
+  "homepage": "https://github.com/sudhirnakka/teams-ubuntu-enhanced#readme",
+  "devDependencies": {
+    "electron": "^1.8.2",
+    "electron-packager": "^13.1.0"
+  },
+  "dependencies": {
+    "electron-main-notification": "^1.0.1"
+  }
+}
