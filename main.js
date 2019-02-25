@@ -26,7 +26,7 @@ var startupOpts = {
     skipTaskbar: false,
     kiosk: false,
     title: 'Microsoft Teams',
-    icon: __dirname + '/favicon-256x256.png',
+    icon: __dirname + '/favicon.png',
     show: true,
     frame: true,
     disableAutoHideCursor: false,
@@ -72,8 +72,8 @@ app.on('ready', function() {
     }, 10000);
 
     setTimeout(function () {
-        mainWindow.clearInterval(intervalId);
-    }, 40000);
+        clearInterval(intervalId);
+    }, 12000);
 
 });
 

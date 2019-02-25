@@ -86,7 +86,6 @@ function setAppBarObserver() {
             const notificationCount = parseInt(mutation.target.getElementsByClassName('activity-badge-count')[0].textContent);
             if (notificationCount > 0) {
                 const notificationMessage = "Unread " + context + " messages: " + notificationCount + "";
-                unreadNotifications.push(notificationMessage);
                 notifyMe(notificationMessage);
             }
         });

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Teams Enhanced
+Icon=${SNAP}/meta/gui/icon.png
+Categories=Chat;Microsoft;
+Exec=teams-enhanced
+Terminal=false

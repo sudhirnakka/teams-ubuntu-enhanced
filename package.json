@@ -9,7 +9,8 @@
     "32-bit": "electron-packager . 'microsoft_teams' --platform=linux --arch=ia32 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
     "64-bit": "electron-packager . 'microsoft_teams' --platform=linux --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
     "distMac": "electron-packager . 'microsoft_teams' --platform=darwin --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"(dist/|node_modules/)\"",
-    "package": "cd dist && tar -czvf microsoft_teams-linux-ia32.tar.gz microsoft_teams-linux-ia32/* && tar -czvf microsoft_teams-linux-x64.tar.gz microsoft_teams-linux-x64/*"
+    "package": "cd dist && tar -czvf microsoft_teams-linux-ia32.tar.gz microsoft_teams-linux-ia32/* && tar -czvf microsoft_teams-linux-x64.tar.gz microsoft_teams-linux-x64/*",
+    "buildSnap": "rm -rf dist && npm run 64-bit && snapcraft cleanbuild"
   },
   "repository": {
     "type": "git",
