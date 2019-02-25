@@ -30,8 +30,5 @@
   "devDependencies": {
     "electron": "^1.8.2",
     "electron-packager": "^13.1.0"
-  },
-  "dependencies": {
-    "electron-main-notification": "^1.0.1"
   }
 }
