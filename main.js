@@ -65,12 +65,16 @@ app.on('ready', function() {
         shell.openExternal(url);
     });
     mainWindow.show();
-    // mainWindow.webContents.insertCSS('.cle-item .left-rail-unread .ts-unread-channel {background-color: blueviolet}');
-    mainWindow.webContents.insertCSS('body{ background-color: black !important;}');
-    setTimeout(function () {
+
+    const intervalId = setInterval(function () {
         mainWindow.webContents.executeJavaScript("var sheet = window.document.styleSheets[0];\n" +
             "sheet.insertRule('.ts-unread-channel {background-color: bisque}', sheet.cssRules.length);")
     }, 10000);
+
+    setTimeout(function () {
+        window.clearInterval(intervalId);
+    }, 40000);
+
 });
 
 
