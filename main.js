@@ -72,7 +72,7 @@ app.on('ready', function() {
     }, 10000);
 
     setTimeout(function () {
-        mainWindow.clearInterval(intervalId);
+        clearInterval(intervalId);
     }, 40000);
 
 });

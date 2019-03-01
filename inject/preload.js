@@ -1,4 +1,5 @@
 let count = 0;
+let unreadMessages = "";
 
 window.addEventListener('DOMContentLoaded', function() {
     const {remote} = require('electron');
@@ -11,6 +12,7 @@ function waitForMaximize(win) {
     if (initialized) {
         setAppBarObserver();
         exitFromCurrentChat();
+        setTimedNotifier();
         return win.maximize();
     }
     setTimeout(() => {
@@ -86,7 +88,7 @@ function setAppBarObserver() {
             const notificationCount = parseInt(mutation.target.getElementsByClassName('activity-badge-count')[0].textContent);
             if (notificationCount > 0) {
                 const notificationMessage = "Unread " + context + " messages: " + notificationCount + "";
-                unreadNotifications.push(notificationMessage);
+                unreadMessages = notificationMessage;
                 notifyMe(notificationMessage);
             }
         });
@@ -101,6 +103,15 @@ function requestNotificationsPermission() {
     Notification.requestPermission().then(function(result) {
         console.log('Permissions for Teams: ' + result);
     });
+}
+
+function setTimedNotifier() {
+    // setInterval(function () {
+    //     console.log("test ", unreadMessages);
+    //     if (unreadMessages.length > 0) {
+    //         notifyMe(unreadMessages);
+    //     }
+    // }, 5000);
 }
 
 function exitFromCurrentChat() {
