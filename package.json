@@ -6,10 +6,11 @@
   "scripts": {
     "start": "electron .",
     "dist": "rm -rf dist && npm run 32-bit && npm run 64-bit && npm run package",
-    "32-bit": "electron-packager . 'microsoft_teams' --platform=linux --arch=ia32 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
-    "64-bit": "electron-packager . 'microsoft_teams' --platform=linux --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
-    "distMac": "electron-packager . 'microsoft_teams' --platform=darwin --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"(dist/|node_modules/)\"",
-    "package": "cd dist && tar -czvf microsoft_teams-linux-ia32.tar.gz microsoft_teams-linux-ia32/* && tar -czvf microsoft_teams-linux-x64.tar.gz microsoft_teams-linux-x64/*"
+    "32-bit": "electron-packager . 'teams-ubuntu-enhanced' --platform=linux --arch=ia32 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
+    "64-bit": "electron-packager . 'teams-ubuntu-enhanced' --platform=linux --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"node_modules/\"",
+    "distMac": "electron-packager . 'teams-ubuntu-enhanced' --platform=darwin --arch=x64 --out=./dist --app-version=0.0.9 --electron-version=1.8.2 --ignore=\"(dist/|node_modules/)\"",
+    "package": "cd dist && tar -czvf teams-ubuntu-enhanced-linux-ia32.tar.gz teams-ubuntu-enhanced-linux-ia32/* && tar -czvf teams-ubuntu-enhanced-linux-x64.tar.gz teams-ubuntu-enhanced-linux-x64/*",
+    "deb": "electron-installer-debian --icon favicon-256x256.png --src dist/teams-ubuntu-enhanced-linux-x64/ --dest dist/installers/ --arch amd64"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/sudhirnakka/teams-ubuntu-enhanced#readme",
   "devDependencies": {
     "electron": "^1.8.2",
+    "electron-installer-debian": "^1.1.1",
     "electron-packager": "^13.1.0"
   }
 }
