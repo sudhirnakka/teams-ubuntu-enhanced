@@ -28,7 +28,7 @@ function waitForMaximize(win) {
         }
         count++;
         waitForMaximize(win);
-    }, 50);
+    }, 10000);
 }
 
 
